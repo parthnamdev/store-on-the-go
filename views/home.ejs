@@ -20,7 +20,7 @@
 <body>
     <section id="header">
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="">Store-On-The-Go</a>
                 <button
                   class="navbar-toggler"
@@ -42,7 +42,7 @@
                       <a class="nav-link" href="/signup">Sign up</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/login">Log in</a>
+                      <a class="nav-link nav-btn mx-auto" href="/login">Log in</a>
                     </li>
                   </ul>
                 </div>
@@ -50,9 +50,41 @@
         </div>
     </section>
     <section id="location">
+      <div id="stickySearchBar">
+      
+          <div class="sticky-search-box mx-auto">
+              <form method="post" action="/selectAlgorithm" id="wordSubmit">
+                <input method="" name="input" action="" class="sticky-input-box search-location" type="text" id="word_input" autocomplete="off" required
+                  placeholder="Search" />
+                <button class="sticky-button" href="" id="searchbtn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+              <script>
+                var input = document.getElementById("word_input");
+            
+                  input.addEventListener("keyup", function (event) {
+                  // Number 13 is the "Enter" key on the keyboard
+                  if (event.keyCode === 13) {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    document.getElementById("searchbtn").click();
+                  }
+                });
+              </script>
+              <div class="suggestions"></div>
+              
+            </div>
+          </div>
       <div class="container-fluid">
-        <input type="text" class="search-location">
-        <div class="suggestions"></div>
+        
+        <div class="row">
+          <h1 class="home-h1 col-lg-6 col-md-6 col-sm-6 my-auto">Choose your location</h1>
+        </div>
+        <div class="row">
+          <img src="location.svg" alt="" class="col-lg-6 col-md-6 col-sm-6 ml-auto">
+        </div>
       </div>
     </section>
     <section id="products">
