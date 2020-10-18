@@ -60,16 +60,31 @@ body {
 .nav-item{
     padding: 0 10px;
 }
+.nav-link:hover {
+    color: #3FC1C9;
+}
 .nav-btn {
     background-color: #3FC1C9;
     border-radius: 25px;
-    width: 90px;
-    font-weight: bold;
+    width: 100px;
+    /* font-weight: bold; */
 }
+
 .nav-btn:hover {
     color: white;
 }
-
+@media (max-width:991px){
+    .nav-btn{
+        background: none;
+        width: auto;
+    }
+    .nav-btn:hover {
+        color: #3FC1C9;
+    }
+}
+.navbar-toggler {
+    color: #364F6B !important;
+}
 #location .container-fluid{
     padding-top: 2%;
 }
