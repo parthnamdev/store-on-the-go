@@ -50,14 +50,18 @@
           </nav>
     </div>
 </section>
-    <section id="login">
-        <div class="container col-md-4">
-            <form action="/login" method="POST">
+    <section id="login" class="container-fluid">
+        <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+            <form action="/login" method="POST" class="auth-form">
                 <label for="username" class="control-label">Username</label>
                 <input type="text" name="username" class="form-control" autocomplete="off">
                 <label for="password" class="control-label">Password</label>
                 <input type="password" name="password" class="form-control">
-            </form>
+                <div class="row">
+                <button type="submit" name="consumer" class="btn btn-outline-primary btn-consumer col-sm-5">Login as consumer</button>
+                <button type="submit" name="seller" class="btn btn-outline-primary btn-seller col-sm-5">Login as seller</button>
+                </div>
+              </form>
         </div>
     </section>
     <section id="footer">

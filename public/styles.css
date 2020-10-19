@@ -1,6 +1,7 @@
 body {
     background-color: white;
     text-align: center;
+    font-family: 'Cabin', sans-serif;
 }
 
 .container-fluid {
@@ -8,7 +9,7 @@ body {
     
 }
 ::-webkit-scrollbar {
-    width: 0;
+    width: 8px;
   }
    
   /* Track */
@@ -18,13 +19,13 @@ body {
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #FC5185;
+    background: linear-gradient(#FC5185, #3FC1C9);
     border-radius: 5px; 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #364F6B; 
   } 
 
 
@@ -201,6 +202,7 @@ body {
     font-size: 10vh;
     text-align: left;
     color: #364F6B;
+    font-weight: 700;
 }
 .suggestions::-webkit-scrollbar {
     width: 0;
@@ -223,11 +225,75 @@ body {
   }  */
 
 
-
-
 /*-------footer--------------------------------------------------------------------------*/
 #footer .container-fluid{
     padding: 4% 15% 1%;
     background-color: black;
     color: #3FC1C9;
+}
+
+/*----------login-----------------------------------------------------------------------------*/
+#login {
+    background: url(login.svg) center top no-repeat;
+    /* background-size: contain; */
+}
+
+.auth-form {
+    text-align: left;
+    color: #364F6B;
+}
+
+.auth-form input {
+    margin: 1% 0 6%;
+    border-radius: 10px;
+    border:solid #364F6B;
+}
+.auth-form input:focus {
+    box-shadow: 0 0 3px 4px rgb(63, 193, 201, 0.2);
+    border-color: #364F6B;
+}
+
+.auth-form label {
+    font-weight: 500;
+}
+
+.btn-consumer {
+    font-weight: 500;
+    color: #364F6B;
+    border-color: #364F6B;
+    margin: 15px 10px 0 auto;
+}
+
+.btn-consumer:hover {
+    background-color: #364F6B;
+    border-color: #364F6B;
+}
+
+.btn-seller {
+    color: #FC5185;
+    font-weight: 500;
+    border-color: #FC5185;
+    margin: 15px auto 0 10px;
+    
+}
+
+.btn-seller:hover {
+    background-color: #FC5185;
+    border-color: #FC5185;
+}
+
+@media (max-width: 575px){
+    .btn-consumer, .btn-seller{
+        margin: 15px 15px 0;
+        border-radius: 10px;
+    }
+}
+
+/*-------signup---------------------------------------------------------------------------------*/
+.custom-h3 {
+    padding: 7% 0;
+    font-size: 5vh;
+    text-align: right;
+    color: #FC5185;
+    font-weight: 500;
 }
