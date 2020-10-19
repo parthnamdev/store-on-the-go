@@ -4,7 +4,7 @@ body {
 }
 
 .container-fluid {
-    padding: 7% 15%;
+    padding: 6% 15%;
     
 }
 ::-webkit-scrollbar {
@@ -50,7 +50,7 @@ body {
 
 @media (max-width: 575px){
     .navbar-brand{
-        font-size: 4.5vw;
+        font-size: 3.7vw;
     }
 }
 
@@ -67,27 +67,31 @@ body {
     background-color: #3FC1C9;
     border-radius: 25px;
     width: 100px;
+    color: white;
     /* font-weight: bold; */
 }
 
 .nav-btn:hover {
-    color: white;
+    color: #364F6B;
 }
 @media (max-width:991px){
     .nav-btn{
         background: none;
         width: auto;
+        color: #364F6B;
     }
     .nav-btn:hover {
         color: #3FC1C9;
     }
 }
-.navbar-toggler {
-    color: #364F6B !important;
+.nav-toggler-icon {
+    color: #364F6B;
 }
+
 #location .container-fluid{
     padding-top: 2%;
 }
+
 
 /* sticky search bar--------------------------------------------------------------*/
 
@@ -120,6 +124,7 @@ body {
     line-height: 40px;/*40*/
     width: 84%;
     padding:0 20px;
+    font-weight: bold;
     }
 .sticky-button
     {
@@ -147,14 +152,17 @@ body {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #364F6B;
     opacity: 1; /* Firefox */
+    font-weight: normal;
   }
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: #364F6B;
+    font-weight: normal;
   }
   
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: #364F6B;
+    font-weight: normal;
   }
 
 /*----suggestions---------------------------------------------------------*/
@@ -180,7 +188,11 @@ body {
     }
 }
 .suggestions div {
-    color: black;
+    color: #364F6B;
+    padding: 10px 20px;
+}
+.suggestions div:hover {
+    color: #364F6B;
     padding: 10px 20px;
 }
 
