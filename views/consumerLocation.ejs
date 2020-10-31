@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- google fonts -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <!-- bootstrap css -->
     <link rel="stylesheet" href="dist/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
@@ -13,8 +14,8 @@
     <link rel="stylesheet" href="styles.css">
 
     <!--Font Awesome -->
-    <script src="https://kit.fontawesome.com/271aed59b6.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        
     <title>Choose location</title>
 </head>
 <body>
@@ -46,21 +47,61 @@
                   <a class="nav-link" href="/consumer/cart">Cart <i class="fas fa-shopping-cart"></i></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link nav-btn mx-auto" href="/consumer/profile">Profile <i class="fas fa-user-circle"></i></a>
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle nav-btn mx-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Profile <i class="fas fa-user-circle"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="/consumer/profile">My Account</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Logout <i class="fas fa-sign-out-alt"></i></a>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
           </nav>
     </div>
 </section>
-    <section id="location">
-        <div class="container col-md-4">
-            <form action="" method="POST">
-              <input type="text" class="search-location">
-              <div class="suggestions"></div>
-            </form>
+<section id="location">
+  <div id="stickySearchBar">
+  
+      <div class="sticky-search-box mx-auto">
+          <form method="post" action="/consumer" id="wordSubmit">
+            <input method="" name="input" action="" class="sticky-input-box search-location" type="text" id="word_input" autocomplete="off" autofocus required
+              placeholder="Search" />
+            <button class="sticky-button" href="" id="searchbtn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <script>
+            var input = document.getElementById("word_input");
+        
+              input.addEventListener("keyup", function (event) {
+              // Number 13 is the "Enter" key on the keyboard
+              if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("searchbtn").click();
+              }
+            });
+          </script>
+          <div class="suggestions"></div>
+          
         </div>
-    </section>
+      </div>
+  <div class="container-fluid explore-city-header">
+    <div class="row">
+      <h1 class="col-lg-6 col-md-6 col-sm-6 my-auto mx-auto">Wanna change your default location?  Choose your city and here you go!</h1>
+    </div>
+  </div>
+</section>
+<section id="products">
+    <div class="container-fluid">
+        
+    </div>
+</section>
     <section id="footer">
         <div class="container-fluid">
           <p>© Copyright <span id="Copyright"></span> Store-On-The-Go</p>
@@ -68,8 +109,8 @@
     </section>
 
     <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="core/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>

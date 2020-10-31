@@ -18,12 +18,21 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/',express.static(__dirname + "/public"));
 app.use('/',express.static(__dirname + "/node_modules/bootstrap"));
+app.use('/',express.static(__dirname + "/node_modules/@fortawesome"));
+app.use('/',express.static(__dirname + "/node_modules/@popperjs"));
+app.use('/',express.static(__dirname + "/node_modules/jquery"));
 
 app.use('/consumer',express.static(__dirname + "/public"));
 app.use('/consumer',express.static(__dirname + "/node_modules/bootstrap"));
+app.use('/consumer',express.static(__dirname + "/node_modules/@fortawesome"));
+app.use('/consumer',express.static(__dirname + "/node_modules/@popperjs"));
+app.use('/consumer',express.static(__dirname + "/node_modules/jquery"));
 
 app.use('/seller',express.static(__dirname + "/public"));
 app.use('/seller',express.static(__dirname + "/node_modules/bootstrap"));
+app.use('/seller',express.static(__dirname + "/node_modules/@fortawesome"));
+app.use('/seller',express.static(__dirname + "/node_modules/@popperjs"));
+app.use('/seller',express.static(__dirname + "/node_modules/jquery"));
 
 app.use(expressSession({secret: process.env.SESSION_SECRET, saveUninitialized: false, resave: false, cookie: { maxAge: 2*60*60*1000 }, store: new MongoStore({mongooseConnection: mongoose.connection, autoRemove: 'interval', autoRemoveInterval: 60})}));
 app.use(passport.initialize());

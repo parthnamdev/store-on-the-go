@@ -33,4 +33,5 @@ fetch('./cities.json')
 
 function selectCity(city) {
     document.querySelector(".search-location").value = city;
+    suggestionPanel.innerHTML = "";
 }

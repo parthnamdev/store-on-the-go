@@ -10,6 +10,10 @@ const signup = (req, res) => {
     res.render('signup');
 }
 
+const explore = (req, res) => {
+    res.render('exploreCity');
+}
+
 module.exports = {
-    index, login, signup
+    index, login, signup, explore
 }

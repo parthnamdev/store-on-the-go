@@ -1,3 +1,4 @@
+const product = require('./products');
 const index = (req, res) => {
     res.render('consumerExplore');
 }
@@ -7,7 +8,7 @@ const location = (req, res) => {
 }
 
 const cart = (req, res) => {
-    res.render('consumerCart');
+    res.render('consumerCart',{product:product});
 }
 
 const profile = (req, res) => {

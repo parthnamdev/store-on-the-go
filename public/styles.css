@@ -2,6 +2,7 @@ body {
     background-color: white;
     text-align: center;
     font-family: 'Cabin', sans-serif;
+    color: #364F6B;
 }
 
 .container-fluid {
@@ -69,11 +70,17 @@ body {
     border-radius: 25px;
     width: 100px;
     color: white;
+    border: none;
     /* font-weight: bold; */
 }
 
-.nav-btn:hover {
-    color: #364F6B;
+.nav-btn:hover, .nav-btn:focus {
+    background-color: #364F6B;
+    color: white;
+    box-shadow: none;
+}
+.dropdown-item:focus {
+    background-color: #FC5185;
 }
 @media (max-width:991px){
     .nav-btn{
@@ -81,12 +88,17 @@ body {
         width: auto;
         color: #364F6B;
     }
-    .nav-btn:hover {
+    .nav-btn:hover, .nav-btn:focus{
         color: #3FC1C9;
+        background: none;
     }
 }
 .nav-toggler-icon {
     color: #364F6B;
+}
+
+.navbar-toggler:focus {
+    outline: none;
 }
 
 #location .container-fluid{
@@ -123,7 +135,7 @@ body {
     color: #364F6B;
     font-size:15px;/*16*/
     line-height: 40px;/*40*/
-    width: 84%;
+    width: 70%;
     padding:0 20px;
     font-weight: bold;
     }
@@ -141,7 +153,10 @@ body {
     margin: 5px;
     opacity: 0.9;
     border: none;
-    }
+}
+.sticky-button:focus {
+    outline: none;
+}
 #stickySearchBar .fa-search{
         font-size: small;
 }
@@ -193,8 +208,8 @@ body {
     padding: 10px 20px;
 }
 .suggestions div:hover {
-    color: #364F6B;
-    padding: 10px 20px;
+    background-color: #dcdcdc;
+    cursor: pointer;
 }
 
 .home-h1 {
@@ -243,12 +258,12 @@ body {
     color: #364F6B;
 }
 
-.auth-form input {
+.auth-form input, .auth-form textarea {
     margin: 1% 0 6%;
     border-radius: 10px;
     border:solid #364F6B;
 }
-.auth-form input:focus {
+.auth-form input:focus, .auth-form textarea:focus {
     box-shadow: 0 0 3px 4px rgb(63, 193, 201, 0.2);
     border-color: #364F6B;
 }
@@ -297,3 +312,137 @@ body {
     color: #FC5185;
     font-weight: 500;
 }
+
+#signup .suggestions {
+    margin-top: 0;
+    width: 92%;
+}
+
+/*explore city------------------------------------------------------------------------*/
+
+.explore-image {
+    width: 80%;
+    padding: 30px 0;
+}
+
+.explore-city-header h1{
+    color: #364F6B;
+    padding: 30px 0;
+}
+
+.add-to-cart:hover {
+    background-color: #3FC1C9;
+    border-color: #3FC1C9;
+}
+
+/*profile------------------------------------------------------------------------------*/
+
+.card, .card-body {
+    overflow-wrap: break-word;
+}
+.custom-table, .custom-td {
+    text-align: left;
+    padding: 5px 15px;
+    color: #364F6B;
+    word-break: break-word;
+}
+@media (max-width: 575px){
+    #transactions .custom-td, #s-transactions .custom-td{
+        padding: 5px;
+        font-size: small;
+    }
+    #transactions .card-body, #s-transactions .card-body{
+        padding: 5px;
+    }
+}
+
+.avatar {
+    background: linear-gradient(rgb(64, 194, 201,0.8),rgb(252, 81, 133,0.5));
+    color: white;
+    width: 30vh;
+    height: 30vh;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    cursor: default;
+    border: solid 1px white;
+    transition: 2.5s;
+}
+
+.avatar:hover {
+    transform: rotate(360deg);
+}
+
+.avatar:hover .avatar-letter {
+    transform: rotate(-355deg);
+}
+
+.avatar-letter {
+    font-size: 18vh;
+    transition: 1.6s;
+}
+
+#addresses .card{
+    min-height: 150px;
+}
+
+.addresses-icon{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: none;
+    color: #364F6B;
+}
+.addresses-icon:focus {
+    outline: none;
+}
+
+.new-address {
+    border: none;
+}
+
+#addresses h1, #transactions h1, #s-transactions h1 {
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+/*cart------------------------------------------------------------------------------------------------*/
+
+.cart-item {
+    margin-bottom: 20px;
+}
+
+.cart-quantity {
+    float: right;
+}
+
+.cart-plus, .cart-minus {
+    cursor: pointer;
+    background-color: #3FC1C9;
+    padding: 6px;
+    border-radius: 25px;
+}
+
+.cart-price {
+    color: #FC5185;
+    font-size: 1.2rem;
+}
+
+#payment, #address {
+    text-align: left;
+}
+
+#payment h1, #address h1 {
+    color: #3FC1C9;
+    padding-bottom: 20px;
+}
+
+#payment .form-check, #address .form-check {
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+#payment button {
+    margin-top: 50px;
+}
+
+

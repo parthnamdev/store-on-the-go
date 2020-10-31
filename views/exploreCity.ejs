@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
     
@@ -15,14 +15,14 @@
 
     <!--Font Awesome -->
     <link rel="stylesheet" href="fontawesome-free/css/all.css">
-    
-    <title>Explore your city</title>
+        
+    <title>Store-On-The-Go</title>
 </head>
 <body>
     <section id="header">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="/consumer"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
+                <a class="navbar-brand" href="/"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
                 <button
                   class="navbar-toggler"
                   type="button"
@@ -33,30 +33,18 @@
                   aria-label="Toggle navigation"
                 >
                 <i class="fas fa-ellipsis-v nav-toggler-icon"></i>
-                <!-- <span class="navbar-toggler-icon"></span> -->
+                  <!-- <span class="navbar-toggler-icon"></span> -->
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="/consumer">Explore</a>
+                      <a class="nav-link" href="/">Location</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/consumer/location">Location</a>
+                      <a class="nav-link" href="/signup">Sign up</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/consumer/cart">Cart <i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                    <li class="nav-item">
-                      <div class="dropdown">
-                        <button class="btn dropdown-toggle nav-btn mx-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Profile <i class="fas fa-user-circle"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="/consumer/profile">My Account</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Logout <i class="fas fa-sign-out-alt"></i></a>
-                        </div>
-                      </div>
+                      <a class="nav-link nav-btn mx-auto" href="/login">Log in</a>
                     </li>
                   </ul>
                 </div>
@@ -67,7 +55,7 @@
       <div id="stickySearchBar">
       
           <div class="sticky-search-box mx-auto">
-              <form method="post" action="/consumer" id="wordSubmit">
+              <form method="post" action="/explore" id="wordSubmit">
                 <input method="" name="input" action="" class="sticky-input-box search-location" type="text" id="word_input" autocomplete="off" autofocus required
                   placeholder="Search" />
                 <button class="sticky-button" href="" id="searchbtn">
@@ -101,21 +89,9 @@
       </div>
     </section>
     <section id="products">
-      <div class="container-fluid row">
-        <!-- for each -->
-          <div class="col-lg-4 col-md-6 cart-item">
-            <div class="card mx-auto">
-              <img src="" class="card-img-top" alt="...">
-              <div class="card-body text-left">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
-                <span href="#" class="cart-price">₨. </span>
-                <button class="cart-quantity add-to-cart btn btn-outline-info">Add to cart <i class="fas fa-cart-plus card-link"></i></button>
-              </div>
-            </div>
-          </div>
-        <!--  -->
-      </div>
+        <div class="container-fluid">
+            
+        </div>
     </section>
     <section id="footer">
         <div class="container-fluid">

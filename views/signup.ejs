@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- google fonts -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <!-- bootstrap css -->
     <link rel="stylesheet" href="dist/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
@@ -13,8 +14,8 @@
     <link rel="stylesheet" href="styles.css">
 
     <!--Font Awesome -->
-    <script src="https://kit.fontawesome.com/271aed59b6.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        
     <title>Signup</title>
 </head>
 <body>
@@ -50,20 +51,48 @@
           </nav>
     </div>
 </section>
-    <section id="signup" class="container-fluid row">
-        <div class="col-lg-6 col-md-6 col-sm-10">
-          <h1 class="home-h1">Get started</h1>
-            <form action="/signup" method="POST" class="auth-form">
+    <section id="signup">
+      <form action="/signup" method="POST" class="auth-form container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-10">
+            <h1 class="home-h1">Get started</h1>
                 <label for="username" class="control-label">Username</label>
-                <input type="text" name="username" class="form-control" autocomplete="off">
+                <input type="text" name="username" class="form-control" autocomplete="off" autofocus>
                 <label for="email" class="control-label">Email</label>
                 <input type="email" name="email" class="form-control" autocomplete="off">
                 <label for="password" class="control-label">Password</label>
                 <input type="password" name="password" class="form-control">
-            </form>
+          </div>
+          <img src="signup.svg" class="col-md-4 col-sm-8 ml-auto" style="margin-top: 50px;" alt="">
+          <h3 class="col-md-8 col-sm-10 ml-auto custom-h3">few more things<br>and you are all set!</h3>
         </div>
-        <img src="signup.svg" class="col-md-4 col-sm-8 ml-auto" style="margin-top: 50px;" alt="">
-        <h3 class="col-md-8 col-sm-10 ml-auto custom-h3">few more steps<br>and you are all set!</h3>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-10">
+            <label for="address" class="control-label">Address</label>
+            <textarea class="form-control" name="address" rows="3"></textarea>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-10">
+            <label for="name" class="control-label">Name</label>
+            <input type="text" name="name" class="form-control" autocomplete="off">
+            <label for="contact" class="control-label">Contact</label>
+            <input type="text" name="contact" class="form-control" autocomplete="off">
+          </div>
+          <div class="col-lg-4 col-md-4 ml-auto">
+            <div>
+              <label for="city" class="control-label">City</label>
+              <input type="text" name="city" class="form-control search-location" autocomplete="off">
+              <div class="suggestions"></div>
+            </div>
+            <div class="row">
+              <button type="submit" name="consumer" class="btn btn-outline-primary btn-consumer col-sm-5">Login as consumer</button>
+              <button type="submit" name="seller" class="btn btn-outline-primary btn-seller col-sm-5">Login as seller</button>
+            </div>
+            
+      </div>
+        </div>
+      </form>
     </section>
     <section id="footer">
         <div class="container-fluid">
@@ -72,8 +101,8 @@
     </section>
 
     <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="core/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
