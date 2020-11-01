@@ -9,9 +9,8 @@ const consumerSchema = new mongoose.Schema({
     email: String,
     contact: Number,
     name: String,
-    address: String,
-    city: String,
-    state: String
+    address: [String],
+    city: String
 });
 
 consumerSchema.plugin(passportLocalMongoose);

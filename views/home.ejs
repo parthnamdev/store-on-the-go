@@ -89,9 +89,23 @@
         </div>
       </div>
     </section>
-    <section id="products">
+    <section id="cities">
         <div class="container-fluid">
-            
+          <div class="row">
+            <h1 class="col-lg-6 col-md-6 col-sm-6 my-auto home-h1">Suggested cities</h1>
+          </div>
+          <% const cities = ["Ahmedabad,Gujarat","Vellore,Tamil Nadu","Vadodara,Gujarat","Pune,Maharashtra","Indore,Madhya Pradesh","Chennai,Tamil Nadu","New Delhi,Delhi","Mumbai,Maharashtra","Neemuch,Madhya Pradesh","Godhra,Gujarat"]%>
+          <div class="row">
+          <% cities.forEach(element => { %>
+              <div class="col-lg-4 col-md-6 cart-item">
+                <div class="card mx-auto">
+                  <div class="card-body text-left">
+                    <a href="#stickySearchBar"><h5 class="card-title suggested-city" onclick="autoFillSuggested(this.innerHTML)"><%= element %></h5></a>
+                  </div>
+                </div>
+              </div>
+          <% }); %>
+        </div>
         </div>
     </section>
     <section id="footer">

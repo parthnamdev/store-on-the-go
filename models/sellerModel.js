@@ -10,8 +10,7 @@ const sellerSchema = new mongoose.Schema({
     contact: Number,
     name: String,
     address: String,
-    city: String,
-    state: String
+    city: String
 });
 
 sellerSchema.plugin(passportLocalMongoose);

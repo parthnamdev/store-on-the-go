@@ -35,3 +35,9 @@ function selectCity(city) {
     document.querySelector(".search-location").value = city;
     suggestionPanel.innerHTML = "";
 }
+
+// const suggestedCity = document.querySelector(".suggested-city");
+
+function autoFillSuggested(city) {
+    selectCity(city);
+}
