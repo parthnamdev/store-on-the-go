@@ -60,15 +60,33 @@
               </nav>
         </div>
     </section>
-    <section id="s-explore">
-        <div class="container col-md-4">
-            <form action="/login" method="POST">
-                <label for="username" class="control-label">Username</label>
-                <input type="text" name="username" class="form-control" autocomplete="off">
-                <label for="password" class="control-label">Password</label>
-                <input type="password" name="password" class="form-control">
-            </form>
+    <section id="s-products" class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 cart-item">
+          <div class="card mx-auto">
+            <div class="card-body text-left">
+              <a href="/abc"><h5 class="card-title"> Add Product <i class="fas fa-plus cart-plus card-title"></i></h5></a>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="row">
+        <!-- for each -->
+        <div class="col-lg-4 col-md-6 cart-item">
+          <div class="card mx-auto">
+            <a href="/abc"><img src="" class="card-img-top" alt="..."></a>
+            <div class="card-body text-left">
+              <a href="/abc"><h5 class="card-title">Sample Product</h5></a>
+              <p class="card-text">This is just a sample description</p>
+              <span href="#" class="cart-price">₨. 8888</span>
+              <div class="cart-quantity product-quantity">Quantity: <span>8</span></div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+      
+        
     </section>
     <section id="footer">
         <div class="container-fluid">

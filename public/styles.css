@@ -5,6 +5,10 @@ body {
     color: #364F6B;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .container-fluid {
     padding: 6% 15%;
     
@@ -318,7 +322,7 @@ body {
     width: 92%;
 }
 
-/*explore city------------------------------------------------------------------------*/
+/*consumer explore city------------------------------------------------------------------------*/
 
 .explore-image {
     width: 80%;
@@ -445,4 +449,29 @@ body {
     margin-top: 50px;
 }
 
+.card a {
+    color: #364F6B;
+}
 
+.card h5 {
+   transition: 0.2s;
+}
+.card a:hover h5 {
+    /* transition: 0.2s; */
+    color: #3FC1C9;
+}
+
+/*seller products------------------------------------------------------------------------------*/
+
+.product-quantity {
+    background-color: #3FC1C9;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    cursor: default;
+}
+
+#s-products a:hover i {
+    color: white;
+    transition: 0.2s;
+}
