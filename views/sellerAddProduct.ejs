@@ -60,32 +60,48 @@
               </nav>
         </div>
     </section>
-    <section id="s-products" class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 cart-item">
-          <div class="card mx-auto">
-            <div class="card-body text-left">
-              <a href="/newProduct"><h5 class="card-title"> Add Product <i class="fas fa-plus cart-plus card-title"></i></h5></a>
+    <section id="s-productDetails" class="container-fluid">
+        <form action="/addProduct" method="POST" class="auth-form container-fluid">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-10">
+                <h1 class="home-h1">Product details</h1>
+                    <label for="name" class="control-label">Name</label>
+                    <input type="text" name="name" class="form-control" autocomplete="off" autofocus required>
+                    <label for="quantity" class="control-label">Quantity</label>
+                    <input type="number" name="quantity" class="form-control" autocomplete="off" required min="1">
+                    <label for="price" class="control-label">Price</label>
+                    <input type="text" name="price" class="form-control" required>
+              </div>
+              <img src="signup.svg" class="col-md-4 col-sm-8 ml-auto" style="margin-top: 50px;" alt="">
+              <h3 class="col-md-8 col-sm-10 ml-auto custom-h3">Describe your product</h3>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- for each -->
-        <div class="col-lg-4 col-md-6 cart-item">
-          <div class="card mx-auto">
-            <a href="/abc"><img src="" class="card-img-top" alt="..."></a>
-            <div class="card-body text-left">
-              <a href="/abc"><h5 class="card-title">Sample Product</h5></a>
-              <p class="card-text">This is just a sample description</p>
-              <span href="#" class="cart-price">₨. 8888</span>
-              <div class="cart-quantity product-quantity">Quantity: <span>8</span></div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-10">
+                <label for="description" class="control-label">Description</label>
+                <textarea class="form-control" name="description" rows="3" required spellcheck="false"></textarea>
             </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-10">
+                <label for="image" class="control-label">Upload an image</label>
+                <input type="file" name="image" class="form-control" autocomplete="off" required>
+                <!-- <label for="contact" class="control-label">Contact</label>
+                <input type="text" name="contact" class="form-control" autocomplete="off" required> -->
+              </div>
+              <div class="col-lg-4 col-md-4 ml-auto">
+                <!-- <div>
+                  <label for="city" class="control-label">City</label>
+                  <input type="text" name="city" class="form-control search-location" autocomplete="off" required>
+                  <div class="suggestions"></div>
+                </div> -->
+                <div class="row">
+                  <button type="submit" name="person" value="consumer" class="btn btn-outline-primary btn-consumer col-sm-5">I'm a consumer</button>
+                  <button type="submit" name="person" value="seller"  class="btn btn-outline-primary btn-seller col-sm-5">I'm a seller</button>
+                </div>
+                
           </div>
-        </div>
-        <!--  -->
-      </div>
-      
+            </div>
+          </form>
         
     </section>
     <section id="footer">

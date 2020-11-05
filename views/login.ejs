@@ -55,12 +55,12 @@
         <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
             <form action="/login" method="POST" class="auth-form">
                 <label for="username" class="control-label">Username</label>
-                <input type="text" name="username" class="form-control" autocomplete="off" autofocus>
+                <input type="text" name="username" class="form-control" autocomplete="off" autofocus required>
                 <label for="password" class="control-label">Password</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" required>
                 <div class="row">
-                <button type="submit" name="consumer" class="btn btn-outline-primary btn-consumer col-sm-5">Login as consumer</button>
-                <button type="submit" name="seller" class="btn btn-outline-primary btn-seller col-sm-5">Login as seller</button>
+                <button type="submit" name="person" value="consumer" class="btn btn-outline-primary btn-consumer col-sm-5">Login as consumer</button>
+                <button type="submit" name="person" value="seller" class="btn btn-outline-primary btn-seller col-sm-5">Login as seller</button>
                 </div>
               </form>
         </div>

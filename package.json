@@ -20,10 +20,12 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@popperjs/core": "^2.5.4",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.2",
     "browserify": "^17.0.0",
     "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",

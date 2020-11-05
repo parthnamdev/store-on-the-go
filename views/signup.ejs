@@ -57,11 +57,11 @@
           <div class="col-lg-6 col-md-6 col-sm-10">
             <h1 class="home-h1">Get started</h1>
                 <label for="username" class="control-label">Username</label>
-                <input type="text" name="username" class="form-control" autocomplete="off" autofocus>
+                <input type="text" name="username" class="form-control" autocomplete="off" autofocus required>
                 <label for="email" class="control-label">Email</label>
-                <input type="email" name="email" class="form-control" autocomplete="off">
+                <input type="email" name="email" class="form-control" autocomplete="off" required>
                 <label for="password" class="control-label">Password</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" required>
           </div>
           <img src="signup.svg" class="col-md-4 col-sm-8 ml-auto" style="margin-top: 50px;" alt="">
           <h3 class="col-md-8 col-sm-10 ml-auto custom-h3">few more things<br>and you are all set!</h3>
@@ -69,25 +69,25 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-10">
             <label for="address" class="control-label">Address</label>
-            <textarea class="form-control" name="address" rows="3"></textarea>
+            <textarea class="form-control" name="address" rows="3" required spellcheck="false"></textarea>
         </div>
         </div>
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-10">
             <label for="name" class="control-label">Name</label>
-            <input type="text" name="name" class="form-control" autocomplete="off">
+            <input type="text" name="name" class="form-control" autocomplete="off" required>
             <label for="contact" class="control-label">Contact</label>
-            <input type="text" name="contact" class="form-control" autocomplete="off">
+            <input type="text" name="contact" class="form-control" autocomplete="off" required>
           </div>
           <div class="col-lg-4 col-md-4 ml-auto">
             <div>
               <label for="city" class="control-label">City</label>
-              <input type="text" name="city" class="form-control search-location" autocomplete="off">
+              <input type="text" name="city" class="form-control search-location" autocomplete="off" required>
               <div class="suggestions"></div>
             </div>
             <div class="row">
-              <button type="submit" name="consumer" class="btn btn-outline-primary btn-consumer col-sm-5">I'm a consumer</button>
-              <button type="submit" name="seller" class="btn btn-outline-primary btn-seller col-sm-5">I'm a seller</button>
+              <button type="submit" name="person" value="consumer" class="btn btn-outline-primary btn-consumer col-sm-5">I'm a consumer</button>
+              <button type="submit" name="person" value="seller"  class="btn btn-outline-primary btn-seller col-sm-5">I'm a seller</button>
             </div>
             
       </div>

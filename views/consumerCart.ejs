@@ -24,7 +24,7 @@
   <section id="header">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="/consumer"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
+            <a class="navbar-brand" href="/consumer/<%= city %>"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/consumer">Explore</a>
+                  <a class="nav-link" href="/consumer/<%= city %>">Explore</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/consumer/location">Location</a>
@@ -56,7 +56,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item" href="/consumer/profile">My Account</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Logout <i class="fas fa-sign-out-alt"></i></a>
+                      <a class="dropdown-item" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
                     </div>
                   </div>
                 </li>
@@ -67,7 +67,7 @@
 </section>
     <section id="cart">
         <div class="container-fluid row">
-          <% product.forEach(element => { %>
+          <% products.forEach(element => { %>
             <div class="col-lg-4 col-md-6 cart-item">
               <div class="card mx-auto">
                 <a href=""><img src="<%= element.image %>" class="card-img-top" alt="..."></a>
