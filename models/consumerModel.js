@@ -8,7 +8,12 @@ const consumerSchema = new mongoose.Schema({
     contact: Number,
     name: String,
     address: [String],
-    city: String
+    city: String,
+    person: {type: String, default: "consumer"},
+    cart: [{
+        product: String,
+        quantity: Number
+    }]
 });
 
 const Consumer = mongoose.model('consumer', consumerSchema);

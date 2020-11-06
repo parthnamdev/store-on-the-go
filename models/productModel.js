@@ -8,9 +8,10 @@ const productSchema = new mongoose.Schema({
     city: String,
     quantity: Number,
     image: {
-        type: String,
+        mimetype: String,
         data: Buffer
-    }
+    },
+    tags: [String]
 });
 
 const Product = mongoose.model('product', productSchema);

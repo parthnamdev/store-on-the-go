@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!--Font Awesome -->
+    <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        
+    <title>Home page (Seller)</title>
+</head>
+<body>
+    <section id="header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="/seller"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                <i class="fas fa-ellipsis-v nav-toggler-icon"></i>
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/seller">My Products</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/seller/transactions">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle nav-btn mx-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Profile <i class="fas fa-user-circle"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="/seller/profile">My Account</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+    </section>
+    <section id="s-productDetails" class="">
+        <form action="/seller/editProduct" method="POST" class="auth-form container-fluid">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-10">
+                <h1 class="home-h1">Edit Product</h1>
+                    <input type="hidden" name="id" value="<%= element._id %>">
+                    <label for="name" class="control-label">Name</label>
+                    <input type="text" name="name" class="form-control" autocomplete="off" autofocus required value="<%= element.name %>">
+                    <label for="quantity" class="control-label">Quantity</label>
+                    <input type="number" name="quantity" class="form-control" autocomplete="off" required min="1" max="1000" value="<%= element.quantity %>">
+                    <label for="price" class="control-label">Price</label>
+                    <input type="text" name="price" class="form-control" required value="<%= element.price %>">
+              </div>
+              <img src="data:<%= element.image.mimetype %>;base64,<%= element.image.data.toString('base64') %>" class="col-md-4 col-sm-8 ml-auto edit-product-page-image" style="margin-top: 50px;" alt="">
+              <h3 class="col-md-8 col-sm-10 ml-auto custom-h3">Change the required</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-10">
+                    <label for="description" class="control-label">Description</label>
+                    <textarea class="form-control" name="description" rows="3" required spellcheck="false"><%= element.description %></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-10">
+                    <label for="tags" class="control-label">Tags</label>
+                    <small>(edit space separated tags)</small>
+                   
+                    <textarea class="form-control" name="tags" rows="3" required spellcheck="false" placeholder="give space between each tag. eg: smartphone mobile phone cellphone 2020 5G" ><%= element.tags.join(" ") %></textarea>
+                
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 mr-auto">
+                
+                <div class="row">
+                  <button type="submit" name="" value=""  class="btn btn-outline-primary btn-seller col-lg-8 col-md-12 col-sm-10">Edit product</button>
+                </div>
+                </div>
+            </div>
+          </form>
+          <form enctype="multipart/form-data" method="post" action="/seller/editProductImage" class="container-fluid auth-form">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-10">
+                    <input type="hidden" name="id" value="<%= element._id %>">
+                    <label for="image" class="control-label">Upload an image</label>
+                    <input type="file" name="image" class="form-control choose-file" autocomplete="off" required>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 mr-auto">
+                    <div class="row">
+                      <button type="submit" name="image" value="" class="btn btn-outline-primary btn-seller col-lg-8 col-md-12 col-sm-10">Change image</button>
+                    </div>
+                </div>
+              </div>
+          </form>
+          <form method="post" action="/seller/deleteProduct" class="container-fluid auth-form">
+            <div class="row"><h3 class="col-md-8 col-sm-10 mr-auto">Delete Product</h3></div>
+            
+            <div class="row">
+              <div class="col-lg-4 col-md-4 mr-auto">
+                  <div class="row">
+                    <input type="hidden" name="id" value="<%= element._id %>">
+                    <button type="button" name="" value="" class="btn btn-outline-primary btn-seller col-lg-8 col-md-12 col-sm-10" data-toggle="modal" data-target="#deletePopup">Delete</button>
+                  </div>
+              </div>
+            </div>
+                        
+                <div class="modal fade" id="deletePopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Delete product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Are you sure you want to delete the product?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary btn-consumer" data-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-outline-primary btn-seller">Yes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </form>
+        
+    </section>
+    <section id="footer">
+        <div class="container-fluid">
+          <p>© Copyright <span id="Copyright"></span> Store-On-The-Go</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="core/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="dist/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

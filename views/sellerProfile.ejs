@@ -61,17 +61,51 @@
 </section>
 <section id="s-profile">
   <div class="container-fluid row">
-  <div class="col-md-6 testing"><div class="avatar"><div class="avatar-letter">JD</div></div></div>
+  <div class="col-md-6 testing"><div class="avatar"><div class="avatar-letter"><%= avatar %></div></div></div>
       <div class="col-md-6">
         <table>
-          <tr><td class="font-weight-bold custom-table">Name</td><td class="custom-td">John Doe</td></tr>
-          <tr><td class="font-weight-bold custom-table">Username</td><td class="custom-td">john_doe</td></tr>
-          <tr><td class="font-weight-bold custom-table">Contact</td><td class="custom-td">8888888888</td></tr>
-          <tr><td class="font-weight-bold custom-table">Email</td><td class="custom-td">johndoe@email.com</td></tr>
-          <tr><td class="font-weight-bold custom-table">City</td><td class="custom-td">Vellore</td></tr>
+          <tr><td class="font-weight-bold custom-table">Name</td><td class="custom-td"><%= user.name %></td></tr>
+          <tr><td class="font-weight-bold custom-table">Username</td><td class="custom-td"><%= user.username %></td></tr>
+          <tr><td class="font-weight-bold custom-table">Contact</td><td class="custom-td"><%= user.contact %></td></tr>
+          <tr><td class="font-weight-bold custom-table">Email</td><td class="custom-td"><%= user.email %></td></tr>
+          <tr><td class="font-weight-bold custom-table">City</td><td class="custom-td"><%= user.city %></td></tr>
         </table>
       </div>
   </div>
+</section>
+<section class="delete">
+    
+  <form method="post" action="/seller/delete" class="container-fluid auth-form">
+    <div class="row"><h3 class="col-md-8 col-sm-10 mr-auto">Account options</h3></div>
+    
+    <div class="row">
+      <div class="col-lg-4 col-md-4 mr-auto">
+          <div class="row">
+            <button type="button" name="" value="" class="btn btn-outline-primary btn-seller col-lg-8 col-md-12 col-sm-10" data-toggle="modal" data-target="#deletePopup">Delete account</button>
+          </div>
+      </div>
+    </div>
+                
+        <div class="modal fade" id="deletePopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Delete Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete your account?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary btn-consumer" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-outline-primary btn-seller">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</form>
 </section>
     <section id="footer">
         <div class="container-fluid">
