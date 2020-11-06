@@ -16,7 +16,15 @@ const productSchema = new mongoose.Schema({
 const transactionSchema = new mongoose.Schema({
     id: String,
     consumer: String,
-    product: [productSchema]
+    totalPrice: Number,
+    product: [{
+        product: String,
+        quantity: Number,
+        seller: String
+    }],
+    address: String,
+    payment_type: String,
+    time: Number
 },{timestamps: true});
 
 const Transaction = mongoose.model('transaction', transactionSchema);

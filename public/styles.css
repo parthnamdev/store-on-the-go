@@ -5,6 +5,24 @@ body {
     color: #364F6B;
 }
 
+@media (max-width: 575px){
+    h1, .home-h1{
+        font-size: 12vw !important;
+    }
+
+    #login {
+        margin-bottom: 400px;
+    }
+
+    .avatar {
+        width: 25vh !important;
+        height: 25vh !important;
+    }
+    .avatar-letter {
+        font-size: 15vh !important;
+    }
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -350,6 +368,9 @@ a:hover {
     color: #364F6B;
     word-break: break-word;
 }
+.first-col {
+    width: 150px;
+}
 @media (max-width: 575px){
     #transactions .custom-td, #s-transactions .custom-td{
         padding: 5px;
@@ -357,6 +378,9 @@ a:hover {
     }
     #transactions .card-body, #s-transactions .card-body{
         padding: 5px;
+    }
+    .first-col {
+        width: 90px;
     }
 }
 
@@ -424,8 +448,12 @@ a:hover {
     background-color: #3FC1C9;
     padding: 6px;
     border-radius: 25px;
+    border: none;
 }
 
+.cart-plus:focus, .cart-minus:focus {
+    outline: none;
+}
 .cart-price {
     color: #FC5185;
     font-size: 1.2rem;
@@ -462,6 +490,9 @@ a:hover {
 }
 
 /*seller products------------------------------------------------------------------------------*/
+#s-products {
+    margin-bottom: 400px;
+}
 
 .product-quantity {
     background-color: #3FC1C9;
@@ -474,4 +505,51 @@ a:hover {
 #s-products a:hover i {
     color: white;
     transition: 0.2s;
+}
+
+.card-img-top {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+@media (max-width:767px) and (min-width:575px){
+    .card-img-top {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+.custom-height-card-text {
+    min-height: 70px;
+}
+
+
+/*add product----------------------------------------------------------------------------------*/
+
+.choose-file {
+    padding-bottom: 40px;
+}
+
+/*edit-product----------------------------------------------------------------------------*/
+
+.edit-product-page-image {
+    object-fit: contain;
+}
+
+#s-productDetails small {
+    color: #3FC1C9;
+}
+
+/*consumer product details----------------------------------------------------------------*/
+
+#productDetails .card-img-top {
+    height: 95%;
+    width: 95%;
+    object-fit: contain;
+}
+@media (max-width:767px) and (min-width:575px){
+    .card-img-top {
+        height: 300px;
+        width: 300px;
+    }
 }

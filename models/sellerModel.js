@@ -8,7 +8,8 @@ const sellerSchema = new mongoose.Schema({
     contact: Number,
     name: String,
     address: String,
-    city: String
+    city: String,
+    person: {type: String, default: "seller"}
 });
 
 const Seller = mongoose.model('seller', sellerSchema);

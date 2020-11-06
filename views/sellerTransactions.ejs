@@ -61,17 +61,19 @@
 </section>
     <section id="s-transactions" class="container-fluid row">
       <h1 class="col my-auto">Your transactions</h1>
-      <div class="col-lg-10 card transactions-card">
-        <div class="card-body">
-        <table class="custom-table">
-          <tr><td class="font-weight-bold custom-td">Id</td><td class="custom-td">cnsahcickckhweiv-58741232</td></tr>
-          <tr><td class="font-weight-bold custom-td">Username</td><td class="custom-td">john_doe</td></tr>
-          <tr><td class="font-weight-bold custom-td">Contact</td><td class="custom-td">8888888888</td></tr>
-          <tr><td class="font-weight-bold custom-td">Email</td><td class="custom-td">johndoe@email.com</td></tr>
-          <tr><td class="font-weight-bold custom-td">Product</td><td class="custom-td">Sample</td></tr>
-        </table>
-      </div>
-      </div>
+      <% transactions.forEach(element => { %>
+        <div class="col-lg-10 card transactions-card">
+          <div class="card-body">
+          <table class="custom-table">
+            <tr><td class="font-weight-bold custom-td first-col">Id</td><td class="custom-td"><%= element.id %></td></tr>
+            <tr><td class="font-weight-bold custom-td first-col">Username</td><td class="custom-td"><%= user.username %></td></tr>
+            <tr><td class="font-weight-bold custom-td first-col">Consumer_id</td><td class="custom-td"><%= element.consumer %></td></tr>
+            <tr><td class="font-weight-bold custom-td first-col">Timestamp</td><td class="custom-td"><%= element.time %></td></tr>
+            <tr><td class="font-weight-bold custom-td first-col">Product</td><td class="custom-td"> | <% element.product.forEach(element1 => { %> product: <%= element1.product %> , quantity: <%= element1.quantity %> , seller: <%= element1.seller %> | <% }); %></td></tr>
+          </table>
+        </div>
+        </div>
+        <% }); %>
   </section>
     <section id="footer">
         <div class="container-fluid">

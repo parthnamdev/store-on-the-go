@@ -6,7 +6,7 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
     <!-- bootstrap css -->
     <link rel="stylesheet" href="dist/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
@@ -16,7 +16,7 @@
     <!--Font Awesome -->
     <link rel="stylesheet" href="fontawesome-free/css/all.css">
         
-    <title>Choose location</title>
+    <title>My Account</title>
 </head>
 <body>
   <section id="header">
@@ -63,45 +63,47 @@
           </nav>
     </div>
 </section>
-<section id="location">
-  <div id="stickySearchBar">
-  
-      <div class="sticky-search-box mx-auto">
-          <form method="post" action="/consumer/changeLocation" id="wordSubmit">
-            <input method="" name="input" action="" class="sticky-input-box search-location" type="text" id="word_input" autocomplete="off" autofocus required
-              placeholder="Search" />
-            <button class="sticky-button" href="" id="searchbtn">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-          <script>
-            var input = document.getElementById("word_input");
-        
-              input.addEventListener("keyup", function (event) {
-              // Number 13 is the "Enter" key on the keyboard
-              if (event.keyCode === 13) {
-                // Cancel the default action, if needed
-                event.preventDefault();
-                // Trigger the button element with a click
-                document.getElementById("searchbtn").click();
-              }
-            });
-          </script>
-          <div class="suggestions"></div>
-          
+    <section id="productDetails">
+        <div class="container-fluid">
+          <!-- <div class="row">
+            <div class="col-md-6"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <table>
+                <tr><td class="font-weight-bold custom-table">Name</td><td class="custom-td"><%= //product.name %></td></tr>
+                <tr><td class="font-weight-bold custom-table">Username</td><td class="custom-td"><%= //product.username %></td></tr>
+                <tr><td class="font-weight-bold custom-table">Contact</td><td class="custom-td"><%= //product.contact %></td></tr>
+                <tr><td class="font-weight-bold custom-table">Email</td><td class="custom-td"><%= //product.email %></td></tr>
+                <tr><td class="font-weight-bold custom-table">City</td><td class="custom-td"><%=// product.city %></td></tr>
+              </table>
+            </div>
+          </div> -->
+          <div class="cart-item">
+            <div class="card mx-auto">
+              <img src="data:<%= element.image.mimetype %>;base64,<%= element.image.data.toString('base64') %>" class="card-img-top" alt="...">
+              <div class="card-body text-left">
+                <h5 class="card-title"><%= element.name %></h5>
+                <p class="card-text custom-height-card-text"><%= element.description %></p>
+                <p class="card-text">Stock: <%= element.quantity %></p>
+                <hr>
+                <h5 class="card-title">Seller Info:</h5>
+                <div class="col-md-6">
+                  <table>
+                    <tr><td class="font-weight-bold custom-table">Name</td><td class="custom-td"><%= seller.name %></td></tr>
+                    <tr><td class="font-weight-bold custom-table">Contact</td><td class="custom-td"><%= seller.contact %></td></tr>
+                    <tr><td class="font-weight-bold custom-table">Email</td><td class="custom-td"><%= seller.email %></td></tr>
+                    <tr><td class="font-weight-bold custom-table">City</td><td class="custom-td"><%= seller.city %></td></tr>
+                  </table>
+                </div>
+                <hr>
+                <span href="#" class="cart-price">₨. <%= element.price %></span>
+                <button class="cart-quantity add-to-cart btn btn-outline-info">Add to cart <i class="fas fa-cart-plus card-link"></i></button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-  <div class="container-fluid explore-city-header">
-    <div class="row">
-      <h1 class="col-lg-6 col-md-6 col-sm-6 my-auto mx-auto">Wanna change your default location?  Choose your city and here you go!</h1>
-    </div>
-  </div>
-</section>
-<section id="products">
-    <div class="container-fluid">
-        
-    </div>
-</section>
+    </section>
     <section id="footer">
         <div class="container-fluid">
           <p>© Copyright <span id="Copyright"></span> Store-On-The-Go</p>

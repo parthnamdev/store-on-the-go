@@ -55,9 +55,10 @@
       <div id="stickySearchBar">
       
           <div class="sticky-search-box mx-auto">
-              <form method="post" action="/explore" id="wordSubmit">
+              <form method="post" action="/search" id="wordSubmit">
                 <input method="" name="input" action="" class="sticky-input-box search-location" type="text" id="word_input" autocomplete="off" autofocus required
                   placeholder="Search" />
+                  <input type="hidden" name="explorecity" value="<%= city %>">
                 <button class="sticky-button" href="" id="searchbtn">
                   <i class="fas fa-search"></i>
                 </button>
@@ -89,8 +90,24 @@
       </div>
     </section>
     <section id="products">
-        <div class="container-fluid">
-            
+        <div class="container-fluid row">
+          <% products.forEach(element => { %>
+            <div class="col-lg-4 col-md-6 cart-item">
+              <form action="/consumer/addToCart" method="POST">
+                <input type="hidden" name="id" value="<%= element._id %>">
+                <input type="hidden" name="quantity" value="<%= element.quantity %>">
+              <div class="card mx-auto">
+                <a href="/consumer/<%= element._id %>"><img src="data:<%= element.image.mimetype %>;base64,<%= element.image.data.toString('base64') %>" class="card-img-top" alt="..."></a>
+                <div class="card-body text-left">
+                  <a href="/consumer/<%= element._id %>"><h5 class="card-title"><%= element.name %></h5></a>
+                  <p class="card-text custom-height-card-text"><%= element.description.substring(0,60) %>...</p>
+                  <span href="#" class="cart-price">₨. <%= element.price %></span>
+                  <button class="cart-quantity add-to-cart btn btn-outline-info" type="submit">Add to cart <i class="fas fa-cart-plus card-link"></i></button>
+                </div>
+              </div>
+            </form>
+            </div>
+          <% }); %> 
         </div>
     </section>
     <section id="footer">

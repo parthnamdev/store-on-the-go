@@ -15,14 +15,14 @@
 
     <!--Font Awesome -->
     <link rel="stylesheet" href="fontawesome-free/css/all.css">
-        
-    <title>Home page (Seller)</title>
+
+    <title>Explore your city</title>
 </head>
 <body>
     <section id="header">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="/seller"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
+                <a class="navbar-brand" href="/consumer"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
                 <button
                   class="navbar-toggler"
                   type="button"
@@ -38,10 +38,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="/seller">My Products</a>
+                      <a class="nav-link" href="/consumer">Explore</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/seller/transactions">Transactions</a>
+                      <a class="nav-link" href="/consumer/location">Location</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/consumer/cart">Cart <i class="fas fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item">
                       <div class="dropdown">
@@ -49,7 +52,7 @@
                           Profile <i class="fas fa-user-circle"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="/seller/profile">My Account</a>
+                          <a class="dropdown-item" href="/consumer/profile">My Account</a>
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </div>
@@ -60,33 +63,11 @@
               </nav>
         </div>
     </section>
-    <section id="s-products" class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 cart-item">
-          <div class="card mx-auto">
-            <div class="card-body text-left">
-              <a href="/seller/newProduct"><h5 class="card-title"> Add Product <i class="fas fa-plus cart-plus card-title"></i></h5></a>
-            </div>
-          </div>
+    <section id="success" class="container-fluid">
+        <div class="row">
+        <img src="success.svg" class="col-sm-6 mx-auto" alt="">
         </div>
-      </div>
-      <div class="row">
-        <% products.forEach(element => { %>
-        <div class="col-lg-4 col-md-6 cart-item">
-          <div class="card mx-auto">
-            <a href="/seller/<%= element._id %>"><img src="data:<%= element.image.mimetype %>;base64,<%= element.image.data.toString('base64') %>" class="card-img-top" alt="..."></a>
-            <div class="card-body text-left">
-              <a href="/seller/<%= element._id %>"><h5 class="card-title"><%= element.name %><span style="color: #FC5185;"> edit</span></h5></a>
-              <p class="card-text custom-height-card-text"><%= element.description.substring(0,60) %>...</p>
-              <span href="#" class="cart-price">₨. <%= element.price %></span>
-              <div class="cart-quantity product-quantity">Quantity: <span><%= element.quantity %></span></div>
-            </div>
-          </div>
-        </div>
-        <% }); %>
-      </div>
-      
-        
+        <h1 style="margin-top: 20px;">Transaction Successfull!</h1>
     </section>
     <section id="footer">
         <div class="container-fluid">

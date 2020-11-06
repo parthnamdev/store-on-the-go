@@ -56,6 +56,19 @@ const login = (req, res) => {
     })
 }
 
+const deleteUser = (req, res) => {
+    Seller.findOneAndDelete({uuid: req.user.uuid}, (err, docs) => {
+        if(!err) {
+            req.logout();
+            res.clearCookie("user");
+            req.user = null;
+            res.redirect('/');
+        } else {
+            res.render('err', {error: "error in deleting user"});
+        }
+    })
+}
+
 module.exports = {
-    register, login
+    register, login, deleteUser
 }

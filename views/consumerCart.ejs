@@ -24,7 +24,7 @@
   <section id="header">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="/consumer/<%= city %>"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
+            <a class="navbar-brand" href="/consumer"><img src="shop.png" alt="" style="width: 40px;"> Store-On-The-Go</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/consumer/<%= city %>">Explore</a>
+                  <a class="nav-link" href="/consumer">Explore</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/consumer/location">Location</a>
@@ -69,32 +69,48 @@
         <div class="container-fluid row">
           <% products.forEach(element => { %>
             <div class="col-lg-4 col-md-6 cart-item">
+              <form action="/consumer/cartQuantity" method="post">
+                <input type="hidden" name="product" value="<%= element.product._id %>">
               <div class="card mx-auto">
-                <a href=""><img src="<%= element.image %>" class="card-img-top" alt="..."></a>
+                <a href=""><img src="data:<%= element.product.image.mimetype %>;base64,<%= element.product.image.data.toString('base64') %>" class="card-img-top" alt="..."></a>
                 <div class="card-body text-left">
-                  <a href=""><h5 class="card-title"><%=element.name%></h5></a>
-                  <p class="card-text"><%=element.description%></p>
-                  <span href="#" class="cart-price">₨. <%=element.price%></span>
-                  <span class="cart-quantity"><i class="fas fa-minus fa-1x card-link cart-minus"></i><span class="card-link cart-quantity-number">1</span><i class="fas fa-plus card-link cart-minus"></i></span>
+                  <a href=""><h5 class="card-title"><%=element.product.name%></h5></a>
+                  <p class="card-text custom-height-card-text"><%=element.product.description%></p>
+                  <span href="#" class="cart-price">₨. <%=element.product.price%></span>
+                  <span class="cart-quantity"><button type="submit" name="operation" value="minus" class="fas fa-minus fa-1x card-link cart-minus"></button><span class="card-link cart-quantity-number"><%= element.quantity %></span><button type="submit" name="operation" value="plus" class="fas fa-plus card-link cart-minus"></button></span>
                 </div>
               </div>
+            </form>
             </div>
           <% }); %>
         </div>
+        
+        <div class="container-fluid">
+          <div class="row"><hr class="col"></div>
+          <div class="row">
+          <h1 class="text-left col total">Total: <%= total %></h1>
+        </div>
+        </div>
     </section>
+    <form action="/consumer/checkOut" method="POST">
+      
+        <textarea style="visibility: hidden;" name="allProducts"><% products.forEach(element => { %><%= element.product._id %>half<%= element.quantity %>half<%= element.product.seller %>full<% }); %></textarea>
+      
+      
+      <input type="hidden" name="totalPrice" value="<%= total %>"">
     <section id="address">
       <div class="container-fluid">
         <div class="row">
           <h1 class="col my-auto">Select your address</h1>
         </div>
-        <!--foreach  -->
+        <% addresses.forEach(element => { %>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="addresses" id="exampleRadios0" value="option1">
+        <input class="form-check-input" type="radio" name="addresses" id="exampleRadios0" value="<%= element %>">
         <label class="form-check-label" for="exampleRadios0">
-          Default radio
+          <%= element %>
         </label>
       </div>
-      <!--  -->
+      <% }); %>
       </div>
     </section>
     <div class="row container-fluid">
@@ -106,19 +122,19 @@
           <h1 class="col my-auto">Choose payment option</h1>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="payment-option" id="exampleRadios1" value="option1">
+          <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios1" value="Pay at shop">
           <label class="form-check-label" for="exampleRadios1">
             Pay at shop
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="payment-option" id="exampleRadios2" value="option1">
+          <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios2" value="Cash on delivery">
           <label class="form-check-label" for="exampleRadios2">
             Cash on delivery
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="payment-option" id="exampleRadios3" value="option1">
+          <input class="form-check-input" type="radio" name="payment_option" id="exampleRadios3" value="Online payment">
           <label class="form-check-label" for="exampleRadios3">
             Online payment
           </label>
@@ -126,6 +142,7 @@
         <button type="submit" name="" class="btn btn-outline-primary btn-seller col-lg-3 col-md-4 col-sm-5">Proceed to Checkout <i class="fas fa-arrow-alt-circle-right"></i></button>
         </div>
     </section>
+  </form>
     <section id="footer">
         <div class="container-fluid">
           <p>© Copyright <span id="Copyright"></span> Store-On-The-Go</p>
