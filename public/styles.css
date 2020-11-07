@@ -396,6 +396,10 @@ a:hover {
     border-color: #3FC1C9;
 }
 
+#products {
+    margin-bottom: 200px;
+}
+
 /*profile------------------------------------------------------------------------------*/
 
 .card, .card-body {
