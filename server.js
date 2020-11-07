@@ -25,8 +25,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // app.use(passport.session());
 app.use(cookieParser(process.env.SESSION_SECRET));
 
-// const uri = `${"mongodb+srv://"+process.env.ATLAS_USER+":"+process.env.ATLAS_PASSWORD+"@"+process.env.ATLAS_CLUSTER+".dcdll.mongodb.net/"+process.env.ATLAS_DB_NAME+"?retryWrites=true&w=majority"}`;
-const uri = 'mongodb://localhost:27017/storeDB';
+const uri = `${"mongodb+srv://"+process.env.ATLAS_USER+":"+process.env.ATLAS_PASSWORD+"@"+process.env.ATLAS_CLUSTER+".fzmhp.mongodb.net/"+process.env.ATLAS_DB_NAME+"?retryWrites=true&w=majority"}`;
+// const uri = 'mongodb://localhost:27017/storeDB';
 mongoose.connect(uri, { useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex: true, useFindAndModify: false });
 const db = mongoose.connection;
 
