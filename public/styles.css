@@ -12,6 +12,7 @@ body {
 @media (max-width: 575px){
     h1, .home-h1{
         font-size: 12vw !important;
+        word-break: break-word;
     }
 
     #login {
