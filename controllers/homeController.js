@@ -110,7 +110,7 @@ const search = (req, res) => {
             const sorted = [];
             const tagString = req.body.input;
             const tags = keywords(tagString);
-            console.log(tags);
+            // console.log(tags);
             found.forEach(element => {
                 let checker = 0;
                 let sort = {};
@@ -129,7 +129,7 @@ const search = (req, res) => {
                 
             });
             const sortAccToTags = sorted.sort((a, b) => parseFloat(b.tags) - parseFloat(a.tags));
-            console.log(sortAccToTags);
+            // console.log(sortAccToTags);
             const final = [];
             sortAccToTags.forEach(element => {
                 final.push(element.product);
