@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const Consumer = require('../models/consumerModel');
+const Product = require('../models/productModel');
 const Transaction = require('../models/transactionModel');
 
 const checkOut = (req, res) => {
@@ -14,6 +15,16 @@ const checkOut = (req, res) => {
                 quantity: splits[1],
                 seller: splits[2]
             }
+            Product.findById(splits[0], (er,prod) => {
+                prod.quantity = prod.quantity - parseInt(splits[1]);
+                prod.save((err) => {
+                    if(err) {
+                        console(err)
+                    } else {
+                        
+                    }
+                })
+            })
             productArray.push(temp)
         }
     });

@@ -3,6 +3,10 @@ body {
     text-align: center;
     font-family: 'Cabin', sans-serif;
     color: #364F6B;
+    z-index: 1;
+}
+.main-background {
+    background-color: white;
 }
 
 @media (max-width: 575px){
@@ -50,6 +54,27 @@ a:hover {
   ::-webkit-scrollbar-thumb:hover {
     background: #364F6B; 
   } 
+
+/* loader animation------------------------------------------------------------------- */
+.load, .spin-load
+{
+  position:fixed;
+  top:50%;
+  left:50%;
+}
+
+.load {
+    transform:translate(-50%,-50%);
+    width: 30%;
+}
+.load_div{
+    background-color: white;
+    z-index:10000;
+    position:fixed;
+    top:0;
+    bottom:0;
+    width:100%;
+}
 
 
 /* home-------------------------------------------------------------------------------*/
@@ -433,6 +458,10 @@ a:hover {
     padding-bottom: 30px;
 }
 
+#s-transactions {
+    margin-bottom: 500px;
+}
+
 /*cart------------------------------------------------------------------------------------------------*/
 
 .cart-item {
@@ -491,7 +520,7 @@ a:hover {
 
 /*seller products------------------------------------------------------------------------------*/
 #s-products {
-    margin-bottom: 400px;
+    margin-bottom: 500px;
 }
 
 .product-quantity {
