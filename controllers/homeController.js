@@ -86,9 +86,9 @@ const login = (req, res) => {
 
 const logout = (req, res) => {
 
-    req.logout();
-    res.clearCookie("user");
+    // req.logout();
     req.user = null;
+    res.clearCookie("user");
     res.redirect('/');
 }
 

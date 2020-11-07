@@ -161,7 +161,7 @@ const searchProducts = (req, res) => {
         const sorted = [];
         const tagString = req.body.input;
         const tags = keywords(tagString);
-        console.log(tags);
+        // console.log(tags);
         found.forEach(element => {
             let checker = 0;
             let sort = {};

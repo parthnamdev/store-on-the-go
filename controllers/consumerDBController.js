@@ -227,9 +227,8 @@ const cartQuantity = (req, res) => {
 const deleteUser = (req, res) => {
     Consumer.findOneAndDelete({uuid: req.user.uuid}, (err, docs) => {
         if(!err) {
-            req.logout();
-            res.clearCookie("user");
             req.user = null;
+            res.clearCookie("user");
             res.redirect('/');
         } else {
             res.render('err', {error: "error in deleting user"});

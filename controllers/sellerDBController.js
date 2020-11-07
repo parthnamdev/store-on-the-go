@@ -1,5 +1,6 @@
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
+const fs = require('fs');
 
 const Seller = require('../models/sellerModel');
 
@@ -22,6 +23,12 @@ const register = (req, res) => {
                 }
                 Seller.create(newSeller, (err, person) => {
                     if(!err) {
+                        const create_folder = `${"./uploads/" + newSeller.uuid}`;
+                        fs.mkdir(create_folder, {recursive: true}, function(errr) {
+                            if(errr) {
+                                console.log(err);
+                            };
+                        });
                         res.cookie("user", newSeller, { signed:true, maxAge: 60*60*1000});
                         res.redirect('/seller');
                     } else {
@@ -59,7 +66,7 @@ const login = (req, res) => {
 const deleteUser = (req, res) => {
     Seller.findOneAndDelete({uuid: req.user.uuid}, (err, docs) => {
         if(!err) {
-            req.logout();
+            
             res.clearCookie("user");
             req.user = null;
             res.redirect('/');
