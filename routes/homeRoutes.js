@@ -12,6 +12,7 @@ router.post('/explore', homeController.explore);
 router.post('/signup', homeController.register);
 router.post('/login', homeController.login);
 router.post('/search', homeController.search);
+router.get('/suggestion/:city/:input', homeController.suggest);
 
 // router.get('/consumer', authenticate, homeController.consumer);
 // router.get('/consumerCart', authenticate, homeController.consumerCart);

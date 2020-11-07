@@ -142,7 +142,23 @@ const search = (req, res) => {
 })
 }
 
+const suggest = (req, res) => {
+    Product.find({city: req.params.city}, (err, found) => {
+        const result = [];
+        found.forEach(element1 => {
+            element1.tags.forEach(element => {
+                if(element.startsWith(req.params.input.toLowerCase())) {
+                    result.push(element);
+                    result.push(element1.name);
+                }
+            });
+        });
+        const uniqueResults = [...new Set(result)];
+        res.json(uniqueResults);
+    })
+}
+
 
 module.exports = {
-    index, loginPage, signupPage, explore, register, login, logout, search
+    index, loginPage, signupPage, explore, register, login, logout, search, suggest
 }
