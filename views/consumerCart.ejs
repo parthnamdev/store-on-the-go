@@ -8,7 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css" f="styles.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css" crossorigin="anonymous">
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="styles.css">
 
     <!--Font Awesome -->
     <link rel="stylesheet" href="fontawesome-free/css/all.css">
@@ -71,6 +74,10 @@
 </section>
     <section id="cart">
         <div class="container-fluid row">
+          <% if(products.length === 0) { %>
+            <div class="mx-auto"><img class="col-lg-6 col-md-8 col-sm-8" src="empty_cart.svg" alt=""></div>
+            <h3 style="margin-top: 50px; color: #FC5185;" class="mx-auto">Cart is empty</h3>
+          <% } %>
           <% products.forEach(element => { %>
             <div class="col-lg-4 col-md-6 cart-item">
               <form action="/consumer/cartQuantity" method="post">
@@ -96,6 +103,8 @@
         </div>
         </div>
     </section>
+    <% if(products.length !== 0) { %>
+      
     <form action="/consumer/checkOut" method="POST">
       
         <textarea style="visibility: hidden;" name="allProducts"><% products.forEach(element => { %><%= element.product._id %>half<%= element.quantity %>half<%= element.product.seller %>full<% }); %></textarea>
@@ -147,6 +156,7 @@
         </div>
     </section>
   </form>
+  <% } %>
     <section id="footer">
         <div class="container-fluid">
           <p>© Copyright <span id="Copyright"></span> Store-On-The-Go</p>

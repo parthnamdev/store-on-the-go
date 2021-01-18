@@ -110,6 +110,10 @@
     </section>
     <section id="products">
       <div class="container-fluid row">
+        <% if(products.length === 0) { %>
+          <div class="mx-auto col-lg-12"><img class="col-lg-4 col-md-6 col-sm-6" src="no_result.svg" alt=""></div>
+          <h3 style="margin-top: 50px; color: #FC5185;" class="mx-auto">No products found</h3>
+        <% } %>
         <% products.forEach(element => { %>
           <div class="col-lg-4 col-md-6 cart-item">
             <form action="/consumer/addToCart" method="POST">
